@@ -9,13 +9,12 @@
             "email": "jonatan.hanson@hiq.se"
         }
     ],
+    "minimum-stability": "stable",
+    "require": {},
     "repositories": [
         {
             "type": "vcs",
-            "url": "https://github.com/helsingborg-stad/acf-export-manager.git"
+            "url": "https://github.com/helsingborg-stad/modularity-timeline.git"
         }
-    ],
-    "require": {
-        "helsingborg-stad/acf-export-manager": ">=1.0.0"
-    }
+    ]
 }

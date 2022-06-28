@@ -263,6 +263,13 @@
                 "operator": "==",
                 "value": "mod-timeline"
             }
+        ],
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/timeline"
+            }
         ]
     ],
     "menu_order": 0,
@@ -271,7 +278,8 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": 1,
-    "description": ""
+    "active": true,
+    "description": "",
+    "show_in_rest": 0
 }]
 
