@@ -2,6 +2,8 @@
 
 namespace ModularityTimeline;
 
+use ModularityTimeline\Helper\CacheBust;
+
 class Timeline extends \Modularity\Module
 {
     public $slug = 'timeline';
@@ -18,7 +20,7 @@ class Timeline extends \Modularity\Module
     public function data(): array
     {
         $data = [];
-        $data['classes'] = implode(' ', apply_filters('Modularity/Module/Classes', array('box', 'box-panel'), $this->post_type, $this->args));
+        $data['classes'] = implode(' ', apply_filters('Modularity/Module/Classes', array(), $this->post_type, $this->args));
         $data['attributes'] = implode(' ', apply_filters('Modularity/Module/Attributes', array(), $this->post_type, $this->args));
 
         $events = is_array(get_field('timeline_events', $this->ID)) ? get_field('timeline_events', $this->ID) : array();
@@ -27,13 +29,15 @@ class Timeline extends \Modularity\Module
             $event['image_grid']   = 'grid-md-12';
             $event['content_grid'] = 'grid-md-12';
             $event['format'] = get_field('timeline_format', $this->ID);
+            $eventTimeDate = $event['format'] ? substr($event['timestamp'], 0, -3) : $event['date'];
+            $event['timelineDate'] = $this->timelineDate($this->ID, $eventTimeDate);
             if (!empty($event['image'])) {
                 if (!empty($event['image_position']) && $event['image_position'] == 'side') {
-                    $event['image_markup'] = wp_get_attachment_image($event['image']['ID'], 'medium');
+                    $event['imageSrc'] = wp_get_attachment_image_src($event['image']['ID'], 'medium');
                     $event['image_grid']   = 'grid-md-5 grid-lg-4';
                     $event['content_grid'] = 'grid-md-7 grid-lg-8';
                 } else {
-                    $event['image_markup'] = wp_get_attachment_image($event['image']['ID'], array('700', '400'));
+                    $event['imageSrc'] = wp_get_attachment_image_src($event['image']['ID'], array('700', '400'));
                 }
             }
         }
@@ -57,7 +61,7 @@ class Timeline extends \Modularity\Module
      * @param  string $date Timeline event date
      * @return string
      */
-    public static function timelineDate($id, $date): string
+    public function timelineDate($id, $date): string
     {
         if (!get_field('timeline_format', $id)) {
             $format = get_field('timeline_date_format', $id);
@@ -77,6 +81,20 @@ class Timeline extends \Modularity\Module
 
             return '<span>' . $date . '</span>';
         }
+    }
+
+    public function style()
+    {
+        //Register custom css
+        wp_register_style(
+            'modularity-timeline',
+            MODULARITY_TIMELINE_URL . '/dist/' . CacheBust::name('css/modularity-timeline.css'),
+            null,
+            '1.0.0'
+        );
+
+        //Enqueue
+        wp_enqueue_style('modularity-timeline');
     }
 
     /**
