@@ -9,11 +9,11 @@
 					{!! !empty($event['link']) ? '<a href="' . $event['link'] . '" alt="' . $event['title'] . '">' : '' !!}
 					<?php $eventTimeDate =  ($event['format']) ? substr($event['timestamp'], 0, -3) :  $event['date'];  ?>
 					<div class="timeline__date hidden-xs hidden-sm">
-							{!! \ModularityTimeline\Module::timelineDate($ID, $eventTimeDate) !!}
+							{!! \ModularityTimeline\Timeline::timelineDate($ID, $eventTimeDate) !!}
 						</div>
 						<div class="timeline__marker">
 							<div class="timeline__date hidden-md hidden-lg">
-								{!! \ModularityTimeline\Module::timelineDate($ID, $eventTimeDate) !!}
+								{!! \ModularityTimeline\Timeline::timelineDate($ID, $eventTimeDate) !!}
 							</div>
 						</div>
 						<div class="timeline__content timeline__{{ $event['image_position'] }}">
@@ -28,7 +28,7 @@
 
 								<div class="{{ $event['content_grid'] }}">
 									<div class="timeline__content__date">
-										{!! \ModularityTimeline\Module::timelineDate($ID, $eventTimeDate) !!}
+										{!! \ModularityTimeline\Timeline::timelineDate($ID, $eventTimeDate) !!}
 									</div>
 									<h3 class="timeline__title">{{ $event['title'] }}</h3>
 									{!! $event['content'] !!}

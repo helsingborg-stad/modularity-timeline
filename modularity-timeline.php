@@ -20,7 +20,6 @@ if (!defined('WPINC')) {
 
 define('MODULARITY_TIMELINE_PATH', plugin_dir_path(__FILE__));
 define('MODULARITY_TIMELINE_URL', plugins_url('', __FILE__));
-define('MODULARITY_TIMELINE_TEMPLATE_PATH', MODULARITY_TIMELINE_PATH . 'templates/');
 define('MODULARITY_TIMELINE_VIEW_PATH', MODULARITY_TIMELINE_PATH . 'views/');
 define('MODULARITY_TIMELINE_MODULE_VIEW_PATH', plugin_dir_path(__FILE__) . 'source/php/Module/views');
 define('MODULARITY_TIMELINE_MODULE_PATH', MODULARITY_TIMELINE_PATH . 'source/php/Module/');
