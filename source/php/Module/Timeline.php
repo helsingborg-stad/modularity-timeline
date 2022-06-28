@@ -83,20 +83,6 @@ class Timeline extends \Modularity\Module
         }
     }
 
-    public function style()
-    {
-        //Register custom css
-        wp_register_style(
-            'modularity-timeline',
-            MODULARITY_TIMELINE_URL . '/dist/' . CacheBust::name('css/modularity-timeline.css'),
-            null,
-            '1.0.0'
-        );
-
-        //Enqueue
-        wp_enqueue_style('modularity-timeline');
-    }
-
     /**
      * Available "magic" methods for modules:
      * init()            What to do on initialization (if you must, use __construct with care, this will probably break stuff!!)
