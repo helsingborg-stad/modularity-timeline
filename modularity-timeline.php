@@ -30,7 +30,7 @@ require_once MODULARITY_TIMELINE_PATH . 'source/php/Vendor/Psr4ClassLoader.php';
 require_once MODULARITY_TIMELINE_PATH . 'Public.php';
 
 // Instantiate and register the autoloader
-$loader = new ModularityProducts\Vendor\Psr4ClassLoader();
+$loader = new ModularityTimeline\Vendor\Psr4ClassLoader();
 $loader->addPrefix('ModularityTimeline', MODULARITY_TIMELINE_PATH);
 $loader->addPrefix('ModularityTimeline', MODULARITY_TIMELINE_PATH . 'source/php/');
 $loader->register();
