@@ -8,10 +8,6 @@ class App
 {
     public function __construct()
     {
-
-        //Init subset
-        new Admin\Settings();
-
         //Register module
         add_action('plugins_loaded', array($this, 'registerModule'));
 
