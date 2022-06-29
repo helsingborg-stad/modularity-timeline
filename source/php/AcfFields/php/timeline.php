@@ -53,7 +53,7 @@
             'allow_null' => 0,
             'other_choice' => 0,
             'save_other_choice' => 0,
-            'default_value' => 'dmy:Day-Month-Year',
+            'default_value' => __('dmy:Day-Month-Year', 'modularity-timeline'),
             'layout' => 'vertical',
             'return_format' => 'value',
         ),
@@ -84,7 +84,7 @@
             'allow_null' => 0,
             'other_choice' => 0,
             'save_other_choice' => 0,
-            'default_value' => 'Hi:Hour-minutes',
+            'default_value' => __('Hi:Hour-minutes', 'modularity-timeline'),
             'layout' => 'vertical',
             'return_format' => 'value',
         ),
@@ -252,7 +252,7 @@
                     'allow_null' => 0,
                     'other_choice' => 0,
                     'save_other_choice' => 0,
-                    'default_value' => 'top : Top',
+                    'default_value' => __('top : Top', 'modularity-timeline'),
                     'layout' => 'vertical',
                     'return_format' => 'value',
                 ),
@@ -267,6 +267,13 @@
                 'value' => 'mod-timeline',
             ),
         ),
+        1 => array(
+            0 => array(
+                'param' => 'block',
+                'operator' => '==',
+                'value' => 'acf/timeline',
+            ),
+        ),
     ),
     'menu_order' => 0,
     'position' => 'normal',
@@ -274,7 +281,8 @@
     'label_placement' => 'top',
     'instruction_placement' => 'label',
     'hide_on_screen' => '',
-    'active' => 1,
+    'active' => true,
     'description' => '',
+    'show_in_rest' => 0,
 ));
 }
