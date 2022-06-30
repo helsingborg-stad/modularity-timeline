@@ -32,13 +32,7 @@ class Timeline extends \Modularity\Module
             $eventTimeDate = $event['format'] ? substr($event['timestamp'], 0, -3) : $event['date'];
             $event['timelineDate'] = $this->timelineDate($this->ID, $eventTimeDate);
             if (!empty($event['image'])) {
-                if (!empty($event['image_position']) && $event['image_position'] == 'side') {
-                    $event['imageSrc'] = wp_get_attachment_image_src($event['image']['ID'], 'medium');
-                    $event['image_grid']   = 'grid-md-5 grid-lg-4';
-                    $event['content_grid'] = 'grid-md-7 grid-lg-8';
-                } else {
-                    $event['imageSrc'] = wp_get_attachment_image_src($event['image']['ID'], array('700', '400'));
-                }
+                $event['imageSrc'] = wp_get_attachment_image_src($event['image']['ID'], array('700', '400'));
             }
         }
 
