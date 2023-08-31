@@ -26,14 +26,11 @@ define('MODULARITY_TIMELINE_MODULE_PATH', MODULARITY_TIMELINE_PATH . 'source/php
 
 load_plugin_textdomain('modularity-timeline', false, plugin_basename(dirname(__FILE__)) . '/languages');
 
-require_once MODULARITY_TIMELINE_PATH . 'source/php/Vendor/Psr4ClassLoader.php';
+// Autoload from plugin
+if (file_exists(MODULARITY_TIMELINE_PATH . 'vendor/autoload.php')) {
+    require_once MODULARITY_TIMELINE_PATH . 'vendor/autoload.php';
+}
 require_once MODULARITY_TIMELINE_PATH . 'Public.php';
-
-// Instantiate and register the autoloader
-$loader = new ModularityTimeline\Vendor\Psr4ClassLoader();
-$loader->addPrefix('ModularityTimeline', MODULARITY_TIMELINE_PATH);
-$loader->addPrefix('ModularityTimeline', MODULARITY_TIMELINE_PATH . 'source/php/');
-$loader->register();
 
 // Acf auto import and export
 $acfExportManager = new \AcfExportManager\AcfExportManager();
