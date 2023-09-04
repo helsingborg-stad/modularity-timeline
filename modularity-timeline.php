@@ -33,13 +33,15 @@ if (file_exists(MODULARITY_TIMELINE_PATH . 'vendor/autoload.php')) {
 require_once MODULARITY_TIMELINE_PATH . 'Public.php';
 
 // Acf auto import and export
-$acfExportManager = new \AcfExportManager\AcfExportManager();
-$acfExportManager->setTextdomain('modularity-timeline');
-$acfExportManager->setExportFolder(MODULARITY_TIMELINE_PATH . 'source/php/AcfFields/');
-$acfExportManager->autoExport(array(
-    'timeline' => 'group_59ede2f88a7b5'
-));
-$acfExportManager->import();
+add_action('acf/init', function () {
+    $acfExportManager = new \AcfExportManager\AcfExportManager();
+    $acfExportManager->setTextdomain('modularity-timeline');
+    $acfExportManager->setExportFolder(MODULARITY_TIMELINE_PATH . 'source/php/AcfFields/');
+    $acfExportManager->autoExport(array(
+        'timeline' => 'group_59ede2f88a7b5'
+    ));
+    $acfExportManager->import();
+}); 
 
 // Modularity 3.0 ready - ViewPath for Component library
 add_filter('/Modularity/externalViewPath', function ($arr) {
