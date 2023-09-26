@@ -10,7 +10,7 @@
         }
     ],
     "minimum-stability": "stable",
-    "require": {},
+    "require": [],
     "repositories": [
         {
             "type": "vcs",
@@ -18,6 +18,9 @@
         }
     ],
     "autoload": {
-        "psr-4": {"ModularityTimeline\\": "source/php/"}
-    }
+        "psr-4": {
+            "ModularityTimeline\\": "source/php/"
+        }
+    },
+    "version": "2.0.0"
 }
