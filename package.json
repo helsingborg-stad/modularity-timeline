@@ -1,6 +1,6 @@
 {
     "name": "@helsingborg-stad/modularity-timeline",
-    "version": "4.0.1",
+    "version": "4.0.2",
     "description": "An addon for displaying timeline.",
     "main": "",
     "repository": {
@@ -23,7 +23,9 @@
         "> 1%",
         "not dead"
     ],
-    "files": ["dist/"],
+    "files": [
+        "dist/"
+    ],
     "devDependencies": {
         "autoprefixer": "^10.4.2",
         "clean-webpack-plugin": "^4.0.0",
