@@ -3,7 +3,9 @@
 namespace ModularityTimeline;
 
 use ModularityTimeline\Helper\CacheBust;
-
+use Modularity\Integrations\Component\ImageResolver;
+use Modularity\Integrations\Component\ImageFocusResolver;
+use ComponentLibrary\Integrations\Image\Image as ImageComponentContract;
 class Timeline extends \Modularity\Module
 {
     public $slug = 'timeline';
@@ -31,8 +33,12 @@ class Timeline extends \Modularity\Module
             $event['format'] = get_field('timeline_format', $this->ID);
             $eventTimeDate = $event['format'] ? substr($event['timestamp'], 0, -3) : $event['date'];
             $event['timelineDate'] = $this->timelineDate($this->ID, $eventTimeDate);
-            if (!empty($event['image'])) {
-                $event['imageSrc'] = wp_get_attachment_image_src($event['image']['ID'], array('700', '400'));
+            if (!empty($event['image']) && isset($event['image']['ID'])) {
+               $event['imageSrc'] = ImageComponentContract::factory(
+                    $event['image']['ID'],
+                    [1024, false],
+                    new ImageResolver()
+                );
             }
         }
 
