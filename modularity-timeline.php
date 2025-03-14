@@ -24,7 +24,9 @@ define('MODULARITY_TIMELINE_VIEW_PATH', MODULARITY_TIMELINE_PATH . 'views/');
 define('MODULARITY_TIMELINE_MODULE_VIEW_PATH', plugin_dir_path(__FILE__) . 'source/php/Module/views');
 define('MODULARITY_TIMELINE_MODULE_PATH', MODULARITY_TIMELINE_PATH . 'source/php/Module/');
 
-load_plugin_textdomain('modularity-timeline', false, plugin_basename(dirname(__FILE__)) . '/languages');
+add_action('init', function() {
+    load_plugin_textdomain('modularity-timeline', false, plugin_basename(dirname(__FILE__)) . '/languages');
+}); 
 
 // Autoload from plugin
 if (file_exists(MODULARITY_TIMELINE_PATH . 'vendor/autoload.php')) {
