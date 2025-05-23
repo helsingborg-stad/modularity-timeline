@@ -21,11 +21,13 @@ class Timeline extends \Modularity\Module
 
     public function data(): array
     {
+        $fields = $this->getFields();
+
         $data = [];
         $data['classes'] = implode(' ', apply_filters('Modularity/Module/Classes', array(), $this->post_type, $this->args));
         $data['attributes'] = implode(' ', apply_filters('Modularity/Module/Attributes', array(), $this->post_type, $this->args));
 
-        $events = is_array(get_field('timeline_events', $this->ID)) ? get_field('timeline_events', $this->ID) : array();
+        $events = isset($fields['timeline_events']) && is_array($fields['timeline_events']) ? $fields['timeline_events'] : [];
 
         foreach ($events as &$event) {
             $event['image_grid']   = 'grid-md-12';
@@ -43,6 +45,7 @@ class Timeline extends \Modularity\Module
         }
 
         $data['events'] = $events;
+        $data['sequential'] = isset($fields['timeline_sequential_mode']) ? $fields['timeline_sequential_mode'] : false;
         return $data;
     }
 

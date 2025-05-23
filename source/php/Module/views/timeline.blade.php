@@ -8,6 +8,9 @@
 		@endtypography
     @endif
 
-	@timeline(['events' => $events])
+	@timeline([
+		'events' => $events,
+		'sequential' => $sequential
+	])
 	@endtimeline
 </div>
