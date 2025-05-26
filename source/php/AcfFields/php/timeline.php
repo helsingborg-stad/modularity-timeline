@@ -27,11 +27,11 @@
         ),
         1 => array(
             'key' => 'field_5d5416b7f92ed',
-            'label' => __('format', 'modularity-timeline'),
+            'label' => __('Format', 'modularity-timeline'),
             'name' => 'timeline_format',
             'aria-label' => '',
             'type' => 'true_false',
-            'instructions' => '',
+            'instructions' => __('Show time instead of date', 'modularity-timeline'),
             'required' => 0,
             'conditional_logic' => array(
                 0 => array(
@@ -47,11 +47,11 @@
                 'class' => '',
                 'id' => '',
             ),
-            'message' => __('Show time instead of date', 'modularity-timeline'),
+            'message' => '',
             'default_value' => 0,
-            'ui' => 0,
             'ui_on_text' => '',
             'ui_off_text' => '',
+            'ui' => 1,
         ),
         2 => array(
             'key' => 'field_59ede644f0d68',
