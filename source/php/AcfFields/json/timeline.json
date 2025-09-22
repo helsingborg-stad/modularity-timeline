@@ -3,11 +3,12 @@
     "title": "Timeline",
     "fields": [
         {
-            "key": "field_5d5416b7f92ed",
-            "label": "format",
-            "name": "timeline_format",
+            "key": "field_68307ff367393",
+            "label": "Sequential mode",
+            "name": "timeline_sequential_mode",
+            "aria-label": "",
             "type": "true_false",
-            "instructions": "",
+            "instructions": "If enabled timeline events won't have an explicit date or time but rather be steps that are part of a sequential process.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -15,16 +16,45 @@
                 "class": "",
                 "id": ""
             },
-            "message": "Show time instead of date",
+            "message": "",
             "default_value": 0,
-            "ui": 0,
-            "ui_on_text": "Date format",
-            "ui_off_text": "Timestamp format"
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "ui": 1
+        },
+        {
+            "key": "field_5d5416b7f92ed",
+            "label": "Format",
+            "name": "timeline_format",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "Show time instead of date",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_68307ff367393",
+                        "operator": "!=",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "ui": 1
         },
         {
             "key": "field_59ede644f0d68",
             "label": "Date format",
             "name": "timeline_date_format",
+            "aria-label": "",
             "type": "radio",
             "instructions": "",
             "required": 1,
@@ -32,6 +62,11 @@
                 [
                     {
                         "field": "field_5d5416b7f92ed",
+                        "operator": "!=",
+                        "value": "1"
+                    },
+                    {
+                        "field": "field_68307ff367393",
                         "operator": "!=",
                         "value": "1"
                     }
@@ -47,17 +82,18 @@
                 "dm": "Day Month",
                 "y": "Year"
             },
+            "default_value": "dmy:Day-Month-Year",
+            "return_format": "value",
             "allow_null": 0,
             "other_choice": 0,
-            "save_other_choice": 0,
-            "default_value": "dmy:Day-Month-Year",
             "layout": "vertical",
-            "return_format": "value"
+            "save_other_choice": 0
         },
         {
             "key": "field_5d5417466c393",
             "label": "Timestamp format",
             "name": "timeline_timestamp_format",
+            "aria-label": "",
             "type": "radio",
             "instructions": "",
             "required": 1,
@@ -66,6 +102,11 @@
                     {
                         "field": "field_5d5416b7f92ed",
                         "operator": "==",
+                        "value": "1"
+                    },
+                    {
+                        "field": "field_68307ff367393",
+                        "operator": "!=",
                         "value": "1"
                     }
                 ]
@@ -78,17 +119,18 @@
             "choices": {
                 "Hi": "Hour minutes"
             },
+            "default_value": "Hi:Hour-minutes",
+            "return_format": "value",
             "allow_null": 0,
             "other_choice": 0,
-            "save_other_choice": 0,
-            "default_value": "Hi:Hour-minutes",
             "layout": "vertical",
-            "return_format": "value"
+            "save_other_choice": 0
         },
         {
             "key": "field_59ede30ef0d63",
             "label": "Tidslinjeh\u00e4ndelser",
             "name": "timeline_events",
+            "aria-label": "",
             "type": "repeater",
             "instructions": "",
             "required": 0,
@@ -102,12 +144,15 @@
             "min": 0,
             "max": 0,
             "layout": "block",
-            "button_label": "",
+            "button_label": "Add Row",
+            "rows_per_page": 20,
+            "acfe_repeater_stylised_button": 0,
             "sub_fields": [
                 {
                     "key": "field_59ede46ef0d64",
                     "label": "Title",
                     "name": "title",
+                    "aria-label": "",
                     "type": "text",
                     "instructions": "",
                     "required": 1,
@@ -121,12 +166,14 @@
                     "placeholder": "",
                     "prepend": "",
                     "append": "",
-                    "maxlength": ""
+                    "maxlength": "",
+                    "parent_repeater": "field_59ede30ef0d63"
                 },
                 {
                     "key": "field_59ede485f0d65",
                     "label": "Content",
                     "name": "content",
+                    "aria-label": "",
                     "type": "textarea",
                     "instructions": "",
                     "required": 0,
@@ -140,12 +187,15 @@
                     "placeholder": "",
                     "maxlength": "",
                     "rows": 4,
-                    "new_lines": "wpautop"
+                    "new_lines": "wpautop",
+                    "acfe_textarea_code": 0,
+                    "parent_repeater": "field_59ede30ef0d63"
                 },
                 {
                     "key": "field_5a44b698607e2",
                     "label": "Link",
                     "name": "link",
+                    "aria-label": "",
                     "type": "text",
                     "instructions": "Add a link to this event",
                     "required": 0,
@@ -159,12 +209,14 @@
                     "placeholder": "",
                     "prepend": "",
                     "append": "",
-                    "maxlength": ""
+                    "maxlength": "",
+                    "parent_repeater": "field_59ede30ef0d63"
                 },
                 {
                     "key": "field_59ede49df0d66",
                     "label": "Date",
                     "name": "date",
+                    "aria-label": "",
                     "type": "date_picker",
                     "instructions": "",
                     "required": 1,
@@ -172,6 +224,11 @@
                         [
                             {
                                 "field": "field_5d5416b7f92ed",
+                                "operator": "!=",
+                                "value": "1"
+                            },
+                            {
+                                "field": "field_68307ff367393",
                                 "operator": "!=",
                                 "value": "1"
                             }
@@ -184,12 +241,14 @@
                     },
                     "display_format": "Y-m-d",
                     "return_format": "Y-m-d",
-                    "first_day": 1
+                    "first_day": 1,
+                    "parent_repeater": "field_59ede30ef0d63"
                 },
                 {
                     "key": "field_5d5414c0677aa",
                     "label": "Timestamp",
                     "name": "timestamp",
+                    "aria-label": "",
                     "type": "time_picker",
                     "instructions": "",
                     "required": 0,
@@ -198,6 +257,11 @@
                             {
                                 "field": "field_5d5416b7f92ed",
                                 "operator": "==",
+                                "value": "1"
+                            },
+                            {
+                                "field": "field_68307ff367393",
+                                "operator": "!=",
                                 "value": "1"
                             }
                         ]
@@ -208,12 +272,14 @@
                         "id": ""
                     },
                     "display_format": "H:i:s",
-                    "return_format": "H:i:s"
+                    "return_format": "H:i:s",
+                    "parent_repeater": "field_59ede30ef0d63"
                 },
                 {
                     "key": "field_59ede561f0d67",
                     "label": "Image",
                     "name": "image",
+                    "aria-label": "",
                     "type": "file",
                     "instructions": "",
                     "required": 0,
@@ -227,7 +293,38 @@
                     "library": "all",
                     "min_size": "",
                     "max_size": "",
-                    "mime_types": ""
+                    "mime_types": "",
+                    "uploader": "",
+                    "parent_repeater": "field_59ede30ef0d63"
+                },
+                {
+                    "key": "field_683080e2961cd",
+                    "label": "Active step",
+                    "name": "active_step",
+                    "aria-label": "",
+                    "type": "true_false",
+                    "instructions": "Highlight this event as being the current one",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_68307ff367393",
+                                "operator": "==",
+                                "value": "1"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 0,
+                    "ui_on_text": "",
+                    "ui_off_text": "",
+                    "ui": 1,
+                    "parent_repeater": "field_59ede30ef0d63"
                 }
             ]
         }
@@ -256,6 +353,11 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "show_in_rest": 0
+    "show_in_rest": 0,
+    "acfe_display_title": "",
+    "acfe_autosync": "",
+    "acfe_form": 0,
+    "acfe_meta": "",
+    "acfe_note": ""
 }]
 
