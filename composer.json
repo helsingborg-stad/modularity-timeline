@@ -29,7 +29,7 @@
             "ModularityTimeline\\": "source/php/"
         }
     },
-    "version": "5.0.0",
+    "version": "5.0.1",
     "config": {
         "allow-plugins": {
             "composer/installers": true
