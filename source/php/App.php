@@ -1,15 +1,15 @@
 <?php
 
-namespace ModularityTimeline;
+declare(strict_types=1);
 
-use ModularityTimeline\Helper\CacheBust;
+namespace ModularityTimeline;
 
 class App
 {
     public function __construct()
     {
         //Register module
-        add_action('init', array($this, 'registerModule'));
+        add_action('init', [$this, 'registerModule']);
     }
 
     /**
@@ -21,7 +21,7 @@ class App
         if (function_exists('modularity_register_module')) {
             modularity_register_module(
                 MODULARITY_TIMELINE_MODULE_PATH,
-                'Timeline'
+                'Timeline',
             );
         }
     }
