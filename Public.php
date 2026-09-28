@@ -5,10 +5,12 @@ use ComponentLibrary\Init as ComponentLibraryInit;
 if (!function_exists('modularity_timeline_render_blade_view')) {
     function modularity_timeline_render_blade_view($view, $data = [], $compress = true)
     {
-        $componentLibrary = new ComponentLibraryInit([]);
-        $bladeEngine = $componentLibrary->getEngine();
-        $data = array_merge($data, array('errorMessage' => false));
         $viewPath = MODULARITY_TIMELINE_MODULE_VIEW_PATH;
+        $bladeEngine = class_exists(\Municipio\Helper\ComponentBladeService::class)
+            ? \Municipio\Helper\ComponentBladeService::create([$viewPath])
+            : (new ComponentLibraryInit([$viewPath]))->getEngine();
+
+        $data = array_merge($data, array('errorMessage' => false));
 
         try {
             $markup = $bladeEngine->makeView($view, $data, [], $viewPath)->render();
