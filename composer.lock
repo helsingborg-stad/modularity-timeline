@@ -4,24 +4,24 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d0dc4501d02ce478a45b8d37d4da1681",
+    "content-hash": "7830e228fd0cf7166c2c49defa47e888",
     "packages": [
         {
             "name": "helsingborg-stad/wpservice",
-            "version": "2.0.9",
+            "version": "3.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/wpservice.git",
-                "reference": "3ed37137b25defbc98e24904f8523ea2f86e3c24"
+                "reference": "a060553f063107137a93fbe6d274d9e3238a96c9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/wpservice/zipball/3ed37137b25defbc98e24904f8523ea2f86e3c24",
-                "reference": "3ed37137b25defbc98e24904f8523ea2f86e3c24",
+                "url": "https://api.github.com/repos/helsingborg-stad/wpservice/zipball/a060553f063107137a93fbe6d274d9e3238a96c9",
+                "reference": "a060553f063107137a93fbe6d274d9e3238a96c9",
                 "shasum": ""
             },
             "require": {
-                "php": "^8.2"
+                "php": "8.2 - 8.5"
             },
             "require-dev": {
                 "helsingborg-stad/phpcs": "^0.3.5",
@@ -51,22 +51,23 @@
             "description": "Simplifies WordPress integration by providing a centralized WpService that exposes global WordPress functions in a streamlined manner. Simplify your development workflow and enhance WordPress integration with ease.",
             "support": {
                 "issues": "https://github.com/helsingborg-stad/wpservice/issues",
-                "source": "https://github.com/helsingborg-stad/wpservice/tree/2.0.9"
+                "source": "https://github.com/helsingborg-stad/wpservice/tree/3.0.0"
             },
-            "time": "2025-10-07T11:25:27+00:00"
+            "time": "2026-11-11T14:28:13+00:00",
+            "published-time": "2026-11-11T14:28:18+00:00"
         },
         {
             "name": "helsingborg-stad/wputilservice",
-            "version": "0.3.0",
+            "version": "0.3.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helsingborg-stad/wputilservice.git",
-                "reference": "7f64cca13cc1511250f728f6cd92c52ec2ead767"
+                "reference": "fe0bc8af42cad889793d0b7d3435c578a32224f2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helsingborg-stad/wputilservice/zipball/7f64cca13cc1511250f728f6cd92c52ec2ead767",
-                "reference": "7f64cca13cc1511250f728f6cd92c52ec2ead767",
+                "url": "https://api.github.com/repos/helsingborg-stad/wputilservice/zipball/fe0bc8af42cad889793d0b7d3435c578a32224f2",
+                "reference": "fe0bc8af42cad889793d0b7d3435c578a32224f2",
                 "shasum": ""
             },
             "require": {
@@ -99,9 +100,10 @@
             "description": "Simplifies WordPress development by providing a centralized WpUtilService that exposes a WordPress api wrapped in a streamlined manner. Simplify your development workflow and enhance WordPress integration with ease.",
             "support": {
                 "issues": "https://github.com/helsingborg-stad/wputilservice/issues",
-                "source": "https://github.com/helsingborg-stad/wputilservice/tree/0.3.0"
+                "source": "https://github.com/helsingborg-stad/wputilservice/tree/0.3.5"
             },
-            "time": "2026-09-03T13:54:31+00:00"
+            "time": "2026-09-16T09:37:15+00:00",
+            "published-time": "2026-09-16T09:37:20+00:00"
         }
     ],
     "packages-dev": [
@@ -1935,10 +1937,10 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {},
     "prefer-stable": true,
     "prefer-lowest": false,
-    "platform": [],
-    "platform-dev": [],
-    "plugin-api-version": "2.6.0"
+    "platform": {},
+    "platform-dev": {},
+    "plugin-api-version": "2.11.0"
 }
