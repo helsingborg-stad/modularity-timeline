@@ -1,133 +1,155 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Modularity Timeline\n"
-"POT-Creation-Date: 2019-08-15 13:41+0200\n"
-"PO-Revision-Date: 2019-08-15 13:42+0200\n"
+"Report-Msgid-Bugs-To: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
-"Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2019-08-15 13:41+0200\n"
+"PO-Revision-Date: 2019-08-15 13:42+0200\n"
+"Language: sv\n"
 "X-Generator: Poedit 1.8.12\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: modularity-timeline.php\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
-"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
-"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: acf-fields/php/timeline.php:6 source/php/Module.php:15
+#: source/php/AcfFields/php/timeline.php:8
+#: source/php/Module/Timeline.php:18
 msgid "Timeline"
 msgstr "Tidslinje"
 
-#: acf-fields/php/timeline.php:10
-msgid "format"
-msgstr "Datum/Klockslag"
-
-#: acf-fields/php/timeline.php:21
+#: source/php/AcfFields/php/timeline.php:36
 msgid "Show time instead of date"
 msgstr "Visa klockslag istället för datum"
 
-#: acf-fields/php/timeline.php:24 acf-fields/php/timeline.php:29
+#: source/php/AcfFields/php/timeline.php:60
 msgid "Date format"
 msgstr "Datumformat"
 
-#: acf-fields/php/timeline.php:25 acf-fields/php/timeline.php:62
+#: source/php/AcfFields/php/timeline.php:100
 msgid "Timestamp format"
 msgstr "Tid"
 
-#: acf-fields/php/timeline.php:49
+#: source/php/AcfFields/php/timeline.php:86
 msgid "Day Month Year"
 msgstr "Dag Månad År"
 
-#: acf-fields/php/timeline.php:50
+#: source/php/AcfFields/php/timeline.php:87
 msgid "Day Month"
 msgstr "Dag Månad"
 
-#: acf-fields/php/timeline.php:51
+#: source/php/AcfFields/php/timeline.php:89
 msgid "Year"
 msgstr "År"
 
-#: acf-fields/php/timeline.php:82
+#: source/php/AcfFields/php/timeline.php:126
 msgid "Hour minutes"
 msgstr "Timmar minuter"
 
-#: acf-fields/php/timeline.php:93
+#: source/php/AcfFields/php/timeline.php:137
 msgid "Tidslinjehändelser"
 msgstr ""
 
-#: acf-fields/php/timeline.php:112
+#: source/php/AcfFields/php/timeline.php:159
 msgid "Title"
 msgstr "Titel"
 
-#: acf-fields/php/timeline.php:131
+#: source/php/AcfFields/php/timeline.php:180
 msgid "Content"
 msgstr "Innehåll"
 
-#: acf-fields/php/timeline.php:150
+#: source/php/AcfFields/php/timeline.php:202
 msgid "Link"
 msgstr ""
 
-#: acf-fields/php/timeline.php:153
+#: source/php/AcfFields/php/timeline.php:206
 msgid "Add a link to this event"
 msgstr ""
 
-#: acf-fields/php/timeline.php:169
+#: source/php/AcfFields/php/timeline.php:223
 msgid "Date"
 msgstr "Datum"
 
-#: acf-fields/php/timeline.php:194
+#: source/php/AcfFields/php/timeline.php:255
 msgid "Timestamp"
 msgstr ""
 
-#: acf-fields/php/timeline.php:218
+#: source/php/AcfFields/php/timeline.php:286
 msgid "Image"
 msgstr "Bild"
 
-#: acf-fields/php/timeline.php:237
-msgid "Image position"
-msgstr "Bildposition"
-
-#: acf-fields/php/timeline.php:249
-msgid "Top"
-msgstr "Topp"
-
-#: acf-fields/php/timeline.php:250
-msgid "Side"
-msgstr "Sida"
-
-#: source/php/Module.php:16
+#: source/php/Module/Timeline.php:19
 msgid "Timelines"
 msgstr "Tidslinjer"
 
-#: source/php/Module.php:17
+#: source/php/Module/Timeline.php:20
 msgid "Display a timeline"
 msgstr "Visa en tidslinje"
 
-#. Plugin Name of the plugin/theme
+#. Plugin Name of the plugin
+#: modularity-timeline.php
 msgid "Modularity Timeline"
 msgstr ""
 
-#. Plugin URI of the plugin/theme
+#. Plugin URI of the plugin
+#: modularity-timeline.php
 msgid "https://github.com/helsingborg-stad/modularity-timeline.git"
 msgstr ""
 
-#. Description of the plugin/theme
+#. Description of the plugin
+#: modularity-timeline.php
 msgid "A module to display a timeline."
 msgstr ""
 
-#. Author of the plugin/theme
+#. Author of the plugin
+#: modularity-timeline.php
 msgid "Jonatan Hanson"
 msgstr ""
 
-#. Author URI of the plugin/theme
+#. Author URI of the plugin
+#: modularity-timeline.php
 msgid "https://github.com/helsingborg-stad"
 msgstr ""
 
-#~ msgid "Timeline events"
-#~ msgstr "Tidslinjehändelser"
+#: source/php/AcfFields/php/timeline.php:12
+msgid "Sequential mode"
+msgstr ""
+
+#: source/php/AcfFields/php/timeline.php:16
+msgid "If enabled timeline events won't have an explicit date or time but rather be steps that are part of a sequential process."
+msgstr ""
+
+#: source/php/AcfFields/php/timeline.php:32
+msgid "Format"
+msgstr ""
+
+#: source/php/AcfFields/php/timeline.php:88
+msgid "Month Year"
+msgstr "Månad År"
+
+#: source/php/AcfFields/php/timeline.php:91
+msgid "dmy:Day-Month-Year"
+msgstr ""
+
+#: source/php/AcfFields/php/timeline.php:128
+msgid "Hi:Hour-minutes"
+msgstr ""
+
+#: source/php/AcfFields/php/timeline.php:153
+msgid "Add Row"
+msgstr ""
+
+#: source/php/AcfFields/php/timeline.php:308
+msgid "Active step"
+msgstr ""
+
+#: source/php/AcfFields/php/timeline.php:312
+msgid "Highlight this event as being the current one"
+msgstr ""

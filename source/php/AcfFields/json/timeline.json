@@ -80,6 +80,7 @@
             "choices": {
                 "dmy": "Day Month Year",
                 "dm": "Day Month",
+                "my": "Month Year",
                 "y": "Year"
             },
             "default_value": "dmy:Day-Month-Year",
@@ -360,4 +361,4 @@
     "acfe_meta": "",
     "acfe_note": ""
 }]
-
+

@@ -76,6 +76,9 @@ class Timeline extends \Modularity\Module
                 case 'y':
                     $date = '<span>' . mysql2date('Y', $date, true) . '</span>';
                     break;
+                case 'my':
+                    $date = '<span>' . mysql2date('M', $date, true) . '</span> ' . '<span>' . mysql2date('Y', $date, true) . '</span>';
+                    break;
                 default:
                     $date = '<span>' . mysql2date('d M', $date, true) . '</span> ' . '<span>' . mysql2date('Y', $date, true) . '</span>';
                     break;
