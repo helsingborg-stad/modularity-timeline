@@ -85,6 +85,7 @@ if (function_exists('acf_add_local_field_group')) {
                 'choices' => [
                     'dmy' => __('Day Month Year', 'modularity-timeline'),
                     'dm' => __('Day Month', 'modularity-timeline'),
+                    'my' => __('Month Year', 'modularity-timeline'),
                     'y' => __('Year', 'modularity-timeline'),
                 ],
                 'default_value' => __('dmy:Day-Month-Year', 'modularity-timeline'),
